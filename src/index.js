@@ -9,8 +9,10 @@ if (require.main === module) {
   process.exit(1);
 }
 
-module.exports = inputFilename => {
-  let puzzleData = fs.readFileSync(inputFilename, 'utf-8');
+module.exports = input => {
+  let puzzleData
+  if(typeof input === 'string') puzzleData = fs.readFileSync(input, 'utf-8');
+  else puzzleData = input
   let puzzle = new Puzzle(puzzleData);
   let strategy = new Strategy(allSolvers);
   strategy.solve(puzzle);
