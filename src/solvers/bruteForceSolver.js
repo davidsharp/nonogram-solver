@@ -4,7 +4,7 @@ const util = require('../util');
 const findGapDistributions = require('../gapDistributor');
 const pushSolver = require('./pushSolver');
 
-const debugMode = require('commander').debug;
+const debugMode = false //require('commander').debug;
 const cacheLimits = [2, 20];
 
 /**
