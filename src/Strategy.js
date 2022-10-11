@@ -162,7 +162,7 @@ class Strategy {
         }
 
         if (!debugMode) {
-          util.spinner.spin();
+          //util.spinner.spin();
         } else if (hasChanged) {
           console.log(`found ${newLine}`);
           console.log(puzzle);
