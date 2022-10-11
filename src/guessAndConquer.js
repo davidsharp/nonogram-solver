@@ -2,7 +2,7 @@ const assert = require("assert");
 
 const Puzzle = require('./Puzzle');
 
-const { recursionDepth: maxRecursionLevel, debugMode } = require('commander');
+const { recursionDepth: maxRecursionLevel, debugMode } = {recursionDepth:0, debugMode:false}//require('commander');
 
 let getNextIndex = (zeroIndexes, randomize) => {
   if (randomize) {
