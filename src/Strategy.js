@@ -1,7 +1,7 @@
 const util = require("./util");
 const guessAndConquer = require('./guessAndConquer');
 
-const debugMode = require('commander').debug;
+const debugMode = false //require('commander').debug;
 
 /**
  * Strategy for solving a puzzle by applying line solvers repeatedly
