@@ -59,32 +59,9 @@ const trimLine = (line, hints) => {
 
 const restoreLine = (line, trimInfo) => trimInfo.left.concat(line).concat(trimInfo.right);
 
-const spinner = {
-  steps: ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'],
-  index: 0,
-  lastExecution: 0,
-  spin: function (stream = process.stderr) {
-    if (!stream) {
-      return;
-    }
-    let now = Date.now();
-    if (now - this.lastExecution < 42) {
-      return;
-    }
-    this.lastExecution = now;
-    stream.write('\x1b[1G');
-    stream.write(this.steps[this.index] + ' ');
-    this.index++;
-    if (this.index >= this.steps.length) {
-      this.index = 0;
-    }
-  }
-};
-
 module.exports = {
   clone,
   trimLine,
   restoreLine,
-  spinner,
   hintSum
 };

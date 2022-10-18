@@ -1,7 +1,7 @@
 const util = require("./util");
 const guessAndConquer = require('./guessAndConquer');
 
-const debugMode = false //require('commander').debug;
+const debugMode = false;
 
 /**
  * Strategy for solving a puzzle by applying line solvers repeatedly
@@ -161,9 +161,7 @@ class Strategy {
           skip = hasChanged && skipEarly;
         }
 
-        if (!debugMode) {
-          //util.spinner.spin();
-        } else if (hasChanged) {
+        if (hasChanged) {
           console.log(`found ${newLine}`);
           console.log(puzzle);
           console.log(`Must revisit ${onRow ? 'column' : 'row'}${changedLines.length > 1 ? 's' : ''} ${changedLines.join(',')}`);

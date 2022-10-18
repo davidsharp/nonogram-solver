@@ -1,16 +1,8 @@
-const fs = require('fs');
-
 const allSolvers = require('./allSolvers');
 const Puzzle = require('./Puzzle');
 let Strategy = require('./Strategy');
 
-if (require.main === module) {
-  console.error('Do not run index.js. Try running cli.js instead');
-  process.exit(1);
-}
-
-module.exports = inputFilename => {
-  let puzzleData = fs.readFileSync(inputFilename, 'utf-8');
+module.exports = puzzleData => {
   let puzzle = new Puzzle(puzzleData);
   let strategy = new Strategy(allSolvers);
   strategy.solve(puzzle);
